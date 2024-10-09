@@ -10,15 +10,13 @@
         body {
             font-family: 'Poppins', sans-serif;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
-        }
-
-        .container {
-            text-align: center;
+            padding: 20px;
         }
 
         h1 {
@@ -32,6 +30,8 @@
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
         }
 
         #display {
@@ -90,6 +90,66 @@
         button.clear:hover {
             background-color: #c0392b;
         }
+
+        .faq {
+            margin-top: 40px;
+            width: 100%;
+            max-width: 600px;
+        }
+
+        .faq h2 {
+            color: #333;
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+        }
+
+        .faq-item h3 {
+            font-size: 1.2rem;
+            color: #333;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .faq-item h3:hover {
+            color: #27ae60;
+        }
+
+        .faq-item p {
+            margin-top: 10px;
+            font-size: 1rem;
+            color: #555;
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .calculator {
+                width: 100%;
+            }
+
+            #display {
+                font-size: 1.6rem;
+            }
+
+            button {
+                font-size: 1.2rem;
+                padding: 15px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            button {
+                padding: 12px;
+                font-size: 1rem;
+            }
+
+            #display {
+                font-size: 1.4rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -116,11 +176,32 @@
                 <button onclick="appendNumber(1)">1</button>
                 <button onclick="appendNumber(2)">2</button>
                 <button onclick="appendNumber(3)">3</button>
-                <button class="action" onclick="calculate()">=</button>
+                <button class="equal" onclick="calculate()">=</button>
 
                 <button onclick="appendNumber(0)" style="grid-column: span 2">0</button>
                 <button onclick="appendDecimal()">.</button>
             </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq">
+            <h2>Frequently Asked Questions (FAQ)</h2>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(1)">How does this calculator work?</h3>
+                <p id="faq1">This calculator uses basic arithmetic operations like addition, subtraction, multiplication, and division. Simply click the buttons or type the values, and hit "=" to see the result.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(2)">Is this calculator mobile-friendly?</h3>
+                <p id="faq2">Yes! This calculator is fully responsive and works perfectly on mobile phones and tablets.</p>
+            </div>
+
+            <div class="faq-item">
+                <h3 onclick="toggleFaq(3)">Can I use decimals in the calculator?</h3>
+                <p id="faq3">Yes, you can use decimal points by clicking the "." button to perform operations involving fractions or non-integer values.</p>
+            </div>
+
         </div>
     </div>
 
@@ -155,6 +236,12 @@
             } catch (error) {
                 display.value = 'Error';
             }
+        }
+
+        // FAQ toggle functionality
+        function toggleFaq(id) {
+            const faq = document.getElementById('faq' + id);
+            faq.style.display = faq.style.display === 'block' ? 'none' : 'block';
         }
     </script>
 </body>
