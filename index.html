@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Simple Calculator - Perform basic arithmetic operations online.">
-    <title>Simple Calculator | Online Arithmetic Tool</title>
+    <meta name="description" content="Try our easy-to-use online calculator for basic arithmetic operations like addition, subtraction, multiplication, and division. Quick and accurate results!">
+    <meta name="keywords" content="online calculator, basic calculator, arithmetic operations, math calculator, free calculator">
+    <title>Simple Calculator | Perform Arithmetic Calculations Online</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,6 +15,10 @@
             height: 100vh;
             margin: 0;
             background-color: #f4f4f4;
+        }
+
+        .container {
+            text-align: center;
         }
 
         .calculator {
@@ -56,27 +61,32 @@
     </style>
 </head>
 <body>
-    <div class="calculator">
-        <input type="text" id="display" disabled>
-        <div class="buttons">
-            <button onclick="clearDisplay()">C</button>
-            <button onclick="deleteLast()">DEL</button>
-            <button onclick="appendOperator('/')">/</button>
-            <button onclick="appendNumber(7)">7</button>
-            <button onclick="appendNumber(8)">8</button>
-            <button onclick="appendNumber(9)">9</button>
-            <button onclick="appendOperator('*')">*</button>
-            <button onclick="appendNumber(4)">4</button>
-            <button onclick="appendNumber(5)">5</button>
-            <button onclick="appendNumber(6)">6</button>
-            <button onclick="appendOperator('-')">-</button>
-            <button onclick="appendNumber(1)">1</button>
-            <button onclick="appendNumber(2)">2</button>
-            <button onclick="appendNumber(3)">3</button>
-            <button onclick="appendOperator('+')">+</button>
-            <button onclick="appendNumber(0)">0</button>
-            <button onclick="appendDecimal()">.</button>
-            <button onclick="calculate()">=</button>
+    <div class="container">
+        <h1>Simple Online Calculator</h1>
+        <p>Welcome to our free online calculator! You can easily perform basic math operations like addition, subtraction, multiplication, and division using this tool. It's perfect for quick and accurate calculations.</p>
+
+        <div class="calculator">
+            <input type="text" id="display" disabled>
+            <div class="buttons">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="deleteLast()">DEL</button>
+                <button onclick="appendOperator('/')">/</button>
+                <button onclick="appendNumber(7)">7</button>
+                <button onclick="appendNumber(8)">8</button>
+                <button onclick="appendNumber(9)">9</button>
+                <button onclick="appendOperator('*')">*</button>
+                <button onclick="appendNumber(4)">4</button>
+                <button onclick="appendNumber(5)">5</button>
+                <button onclick="appendNumber(6)">6</button>
+                <button onclick="appendOperator('-')">-</button>
+                <button onclick="appendNumber(1)">1</button>
+                <button onclick="appendNumber(2)">2</button>
+                <button onclick="appendNumber(3)">3</button>
+                <button onclick="appendOperator('+')">+</button>
+                <button onclick="appendNumber(0)">0</button>
+                <button onclick="appendDecimal()">.</button>
+                <button onclick="calculate()">=</button>
+            </div>
         </div>
     </div>
 
